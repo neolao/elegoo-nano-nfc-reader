@@ -13,6 +13,7 @@ void setup(void) {
   Serial.begin(115200);
   Serial.println("System initialized");
 
+  pinMode(LED_BUILTIN, OUTPUT);
   nfc.begin();
 }
 
@@ -27,6 +28,9 @@ void readNFC() {
     //tag.print();
     tagId = tag.getUidString();
     Serial.println("Tag: " + tagId);
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(500);
+    digitalWrite(LED_BUILTIN, LOW);
   }
   delay(1000);
 }
