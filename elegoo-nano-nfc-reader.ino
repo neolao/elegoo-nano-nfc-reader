@@ -24,7 +24,7 @@ void readNFC() {
   if (nfc.tagPresent())
   {
     NfcTag tag = nfc.read();
-    tag.print();
+    //tag.print();
     tagId = tag.getUidString();
     Serial.println("Tag: " + tagId);
   }
